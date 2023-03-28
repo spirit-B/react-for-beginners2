@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import MovieDetail from '../components/MovieDetail';
+import styles from './Detail.module.css';
 
 function Detail() {
 	const [loading, setLoading] = useState(true);
@@ -23,7 +24,9 @@ function Detail() {
 	return (
 		<div>
 			{loading ? (
-				<h1>Loading...</h1>
+				<div className={styles.loader}>
+					<span>Loading...</span>
+				</div>
 			) : (
 				<MovieDetail
 					coverImg={movie.large_cover_image}
